@@ -1,0 +1,6 @@
+# Ignore me please, all we care about is validate-image-hashes.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dummy
+  namespace: default

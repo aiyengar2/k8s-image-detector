@@ -1,0 +1,4 @@
+global:
+  cattle:
+    imageConflicts:
+      67da37a9a360e600e74464da48437257b00a754c77c40f60c65e4cb327c34bd5: coredns
