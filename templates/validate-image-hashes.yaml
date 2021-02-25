@@ -2,11 +2,9 @@
 # {{- $denyDict := .Values.global.cattle.imageConflicts }}
 # {{- range $_, $pod := (lookup "v1" "Pod" "" "").items }}
 # {{- range $_, $container := $pod.status.containerStatuses }}
-#   {{ $pod.metadata.name }}.{{ $container.name }}: | 
 # {{- $imageHash := (last (mustRegexSplit ":" $container.imageID 2)) }}
 # {{- if hasKey $denyDict $imageHash }}
 # {{ required (printf $errFmt $pod.metadata.name $container.name $imageHash (get $denyDict $imageHash)) "" }}
 # {{- end }}
-# {{ $imageHash | indent 4 }}
 # {{- end }}
 # {{- end }}
